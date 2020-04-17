@@ -4,7 +4,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         var changeInfo = "${changeInfo.status}"
         var _target_url = encodeURI("${localStorage.getItem('shopeeLink')}")
         var activeChecked = ${localStorage.getItem('activeCheckbox')}
-        var validate = 1586908800000
+        var validate = 1590969600000
         var today = new Date().getTime()
 
         console.log("activeChecked:", activeChecked)
@@ -19,7 +19,14 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             } else if (location.href.includes('purchase') || location.href.includes('payment') || location.href.includes('user')) {
               console.log('Success')
             } else if (_target_url == location.href) {
-              if (document.getElementsByClassName('YtgjXY').length && !document.getElementsByClassName('YtgjXY')[1].className.includes('disabled')) {
+              if (!document.getElementsByClassName('QsFVEo').length && document.getElementsByClassName('YtgjXY').length && !document.getElementsByClassName('YtgjXY')[1].className.includes('disabled')) {
+
+                if (document.getElementsByClassName('crl7WW').length) {
+                  if (document.getElementsByClassName('crl7WW')[0].getElementsByClassName('product-variation').length) {
+                    document.getElementsByClassName('crl7WW')[0].getElementsByClassName('product-variation')[1].click()
+                  }
+                }
+
                 document.getElementsByClassName('YtgjXY')[1].click()
               } else {
                 setTimeout(function(){
